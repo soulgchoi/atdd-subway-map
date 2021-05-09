@@ -36,7 +36,7 @@ class LineServiceTest {
         given(lineDao.findById(1L)).willReturn(Optional.of(line));
 
         // when
-        Line line2 = lineService.createLine("2호선", "green");
+        Line line2 = lineService.createLine(line);
 
         // then
         assertThat(line2).isEqualTo(line);
