@@ -1,8 +1,8 @@
 package wooteco.subway.dto;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import wooteco.subway.domain.line.Line;
-import wooteco.subway.dto.validator.DistanceForSection;
 import wooteco.subway.dto.validator.Name;
 import wooteco.subway.dto.validator.StationForSection;
 
@@ -16,7 +16,7 @@ public class LineRequest {
     private Long upStationId;
     @StationForSection
     private Long downStationId;
-    @DistanceForSection
+    @Positive(message = "1 이상의 거리를 입력해 주세요.")
     private int distance;
 
     public LineRequest() {
