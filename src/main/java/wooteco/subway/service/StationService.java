@@ -6,16 +6,14 @@ import org.springframework.stereotype.Service;
 import wooteco.subway.domain.station.Station;
 import wooteco.subway.dto.StationRequest;
 import wooteco.subway.dto.StationResponse;
-import wooteco.subway.exception.notRemovableException.NotRemovableStationException;
 import wooteco.subway.exception.duplicateException.StationDuplicationException;
-import wooteco.subway.exception.notFoundException.StationNotFoundException;
+import wooteco.subway.exception.notRemovableException.NotRemovableStationException;
 import wooteco.subway.repository.SectionDao;
 import wooteco.subway.repository.StationDao;
 
 @Service
 public class StationService {
 
-    private static final int SIZE_OF_SECTION = 0;
     private final StationDao stationDao;
     private final SectionDao sectionDao;
 
@@ -30,12 +28,6 @@ public class StationService {
 
         long id = stationDao.save(station);
         station.setId(id);
-        return StationResponse.of(station);
-    }
-
-    public StationResponse findById(long id) {
-        Station station = stationDao.findById(id)
-            .orElseThrow(StationNotFoundException::new);
         return StationResponse.of(station);
     }
 

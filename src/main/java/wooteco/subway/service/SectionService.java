@@ -8,7 +8,6 @@ import wooteco.subway.domain.station.Station;
 import wooteco.subway.dto.SectionRequest;
 import wooteco.subway.dto.SectionResponse;
 import wooteco.subway.exception.notFoundException.LineNotFoundException;
-import wooteco.subway.exception.notAddableSectionException.SameStationSectionException;
 import wooteco.subway.exception.notFoundException.StationNotFoundException;
 import wooteco.subway.repository.LineDao;
 import wooteco.subway.repository.SectionDao;
